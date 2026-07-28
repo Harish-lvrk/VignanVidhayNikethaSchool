@@ -2549,6 +2549,7 @@ ul { list-style: none; }
   position: relative;
   height: 210px;
   overflow: hidden;
+  background: var(--gray-100); /* shows while image loads */
 }
 
 .ecg-img img {
@@ -2560,20 +2561,28 @@ ul { list-style: none; }
 
 .event-card-glide:hover .ecg-img img { transform: scale(1.06); }
 
-.ecg-date {
-  position: absolute;
-  top: 14px; right: 14px;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 10px;
-  padding: 6px 11px;
-  text-align: center;
-  line-height: 1.2;
-  box-shadow: 0 4px 12px rgba(26,86,219,0.4);
+/* Top row inside card body: tag + date pill side by side */
+.ecg-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
-.ecg-date .day   { display: block; font-size: 1.35rem; font-weight: 800; font-family: 'Outfit', sans-serif; }
-.ecg-date .month { display: block; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.85; }
+/* Date pill — inline, no absolute positioning */
+.ecg-date-pill {
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  font-family: 'Outfit', sans-serif;
+}
 
 .ecg-body { padding: 20px 20px 24px; }
 
