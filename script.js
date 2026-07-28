@@ -49,31 +49,36 @@ const scrollTopBtn = document.getElementById('scrollTop');
 
 // ===== GLIDE.JS SLIDERS =====
 window.addEventListener('load', () => {
-  // Life at School Gallery Slider
+
+  // Life at School — center-focused peek slider (like Glide.js demo)
   if (document.getElementById('lifeGlide')) {
     new Glide('#lifeGlide', {
       type: 'carousel',
-      perView: 3,
-      gap: 24,
-      autoplay: 3500,
+      perView: 1,
+      focusAt: 'center',
+      peek: { before: 260, after: 260 },
+      gap: 28,
+      autoplay: 3800,
       hoverpause: true,
-      animationDuration: 600,
+      animationDuration: 500,
       breakpoints: {
-        1024: { perView: 2 },
-        640:  { perView: 1 }
+        1024: { peek: { before: 160, after: 160 } },
+        768:  { peek: { before: 60, after: 60 } },
+        480:  { peek: { before: 0, after: 0 } }
       }
     }).mount();
   }
 
-  // Events & News Slider
+  // Events & News — 3-card carousel
   if (document.getElementById('eventsGlide')) {
     new Glide('#eventsGlide', {
       type: 'carousel',
       perView: 3,
+      focusAt: 'center',
       gap: 28,
       autoplay: 4500,
       hoverpause: true,
-      animationDuration: 600,
+      animationDuration: 500,
       breakpoints: {
         1024: { perView: 2 },
         640:  { perView: 1 }
