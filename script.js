@@ -1,9 +1,86 @@
+// ===== PAGE LOADER =====
+(function () {
+  const loader  = document.getElementById('pageLoader');
+  const bar     = document.getElementById('loaderBar');
+  if (!loader || !bar) return;
+
+  // Prevent scrolling while loading
+  document.body.style.overflow = 'hidden';
+
+  let progress = 0;
+  let done = false;
+
+  // Smoothly animate progress bar
+  const tick = setInterval(() => {
+    // Accelerate slowly at first, then slow down near 90%
+    const step = progress < 60 ? 2.2 : progress < 85 ? 0.9 : 0.3;
+    progress = Math.min(progress + step, 90);
+    bar.style.width = progress + '%';
+  }, 60);
+
+  function finish() {
+    if (done) return;
+    done = true;
+    clearInterval(tick);
+
+    // Rush to 100%
+    bar.style.transition = 'width 0.35s ease';
+    bar.style.width = '100%';
+
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 450);
+  }
+
+  // Hide on real page load
+  window.addEventListener('load', finish);
+
+  // Fallback: always hide after 3.5s even if load event is slow
+  setTimeout(finish, 3500);
+})();
+
 // ===== DOM ELEMENTS =====
 const header = document.getElementById('header');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const navOverlay = document.getElementById('navOverlay');
 const scrollTopBtn = document.getElementById('scrollTop');
+
+// ===== GLIDE.JS SLIDERS =====
+window.addEventListener('load', () => {
+  // Life at School Gallery Slider
+  if (document.getElementById('lifeGlide')) {
+    new Glide('#lifeGlide', {
+      type: 'carousel',
+      perView: 3,
+      gap: 24,
+      autoplay: 3500,
+      hoverpause: true,
+      animationDuration: 600,
+      breakpoints: {
+        1024: { perView: 2 },
+        640:  { perView: 1 }
+      }
+    }).mount();
+  }
+
+  // Events & News Slider
+  if (document.getElementById('eventsGlide')) {
+    new Glide('#eventsGlide', {
+      type: 'carousel',
+      perView: 3,
+      gap: 28,
+      autoplay: 4500,
+      hoverpause: true,
+      animationDuration: 600,
+      breakpoints: {
+        1024: { perView: 2 },
+        640:  { perView: 1 }
+      }
+    }).mount();
+  }
+});
 
 // ===== STICKY HEADER ON SCROLL =====
 window.addEventListener('scroll', () => {

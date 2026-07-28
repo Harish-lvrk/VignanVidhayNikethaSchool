@@ -15,10 +15,45 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Glide.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.theme.min.css">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- ===== LOADING SCREEN ===== -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-bg"></div>
+    <div class="loader-content">
+      <!-- School Logo -->
+      <div class="loader-logo">
+        <img src="images/vignan_school.jpg" alt="School Logo" class="loader-logo-img">
+      </div>
+      <!-- School Name -->
+      <div class="loader-school-name">
+        <span class="loader-sindhu">Sindhu's</span>
+        <span class="loader-vignan">Vignan Vidhaya Nikethan</span>
+        <span class="loader-location"><i class="fa-solid fa-location-dot"></i> Narasannapeta, Andhra Pradesh</span>
+      </div>
+      <!-- Dash Animation -->
+      <div class="loader-anim-wrap">
+        <div class="loader-dash-container">
+          <div class="dash uno"></div>
+          <div class="dash dos"></div>
+          <div class="dash tres"></div>
+          <div class="dash cuatro"></div>
+        </div>
+      </div>
+      <!-- Progress bar -->
+      <div class="loader-progress-wrap">
+        <div class="loader-progress-bar" id="loaderBar"></div>
+      </div>
+      <p class="loader-tagline">Nurturing Excellence, Building Futures...</p>
+    </div>
+  </div>
 
   <!-- ===== TOP BAR ===== -->
   <div class="top-bar">
@@ -67,7 +102,7 @@
   <header class="header" id="header">
     <div class="container">
       <a href="#" class="logo">
-        <img src="images/logo.png" alt="Sindhu Memorial Educational Society Logo" class="logo-img">
+        <img src="images/vignan_school.jpg" alt="Sindhu Memorial Educational Society Logo" class="logo-img">
         <div class="logo-text">
           <h1>Sindhu's Vignan Vidyanikethan</h1>
           <span>Nurturing Excellence, Building Futures</span>
@@ -549,10 +584,73 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Photo Gallery</span>
-        <h2>Life at Vignan Vidyanikethan</h2>
+        <h2>Life at Vignan Vidhaya Nikethan</h2>
         <p>Glimpses of our vibrant school life, events, and activities.</p>
       </div>
-      <div class="gallery-grid reveal">
+      <!-- Glide Life Gallery -->
+      <div class="glide glide-gallery reveal" id="lifeGlide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="life-slide">
+                <img src="images/placeholder_campus.png" alt="School Campus" loading="lazy">
+                <div class="life-caption"><i class="fa-solid fa-school"></i> School Campus</div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="life-slide">
+                <img src="images/gallery_yoga.png" alt="Morning Yoga" loading="lazy">
+                <div class="life-caption"><i class="fa-solid fa-om"></i> Morning Yoga &amp; Meditation</div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="life-slide">
+                <img src="images/placeholder_classroom.png" alt="Classroom" loading="lazy">
+                <div class="life-caption"><i class="fa-solid fa-chalkboard-user"></i> Classroom Learning</div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="life-slide">
+                <img src="images/gallery_science.png" alt="Science Lab" loading="lazy">
+                <div class="life-caption"><i class="fa-solid fa-flask"></i> Science Lab</div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="life-slide">
+                <img src="images/placeholder_sports.png" alt="Sports Meet" loading="lazy">
+                <div class="life-caption"><i class="fa-solid fa-running"></i> Inter-House Sports Meet</div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="life-slide">
+                <img src="images/placeholder_events.png" alt="Annual Day" loading="lazy">
+                <div class="life-caption"><i class="fa-solid fa-masks-theater"></i> Annual Cultural Day</div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="life-slide">
+                <img src="images/gallery_maths.png" alt="Maths Exhibition" loading="lazy">
+                <div class="life-caption"><i class="fa-solid fa-calculator"></i> Maths Exhibition</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+          <button class="glide__bullet" data-glide-dir="=3"></button>
+          <button class="glide__bullet" data-glide-dir="=4"></button>
+          <button class="glide__bullet" data-glide-dir="=5"></button>
+          <button class="glide__bullet" data-glide-dir="=6"></button>
+        </div>
+      </div>
+    </div>
+  </section>
         <div class="gallery-item">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:48px;height:48px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
           <span>School Campus Photo</span>
@@ -699,19 +797,13 @@
   </section>
 
   <!-- ===== EVENTS ===== -->
-  <section class="section" id="events">
+  <section class="section section-alt" id="events">
     <div class="container">
       <div class="section-header reveal">
         <span class="label">Latest Updates</span>
-        <h2>Events & News</h2>
+        <h2>Events &amp; News</h2>
         <p>Stay updated with the latest happenings at our school.</p>
       </div>
-      <div class="events-grid">
-        <div class="event-card reveal">
-          <div class="event-image">
-            <span>📸 Event Photo</span>
-            <div class="event-date">
-              <span class="day">15</span>
               <span class="month">Aug</span>
             </div>
           </div>
@@ -920,8 +1012,8 @@
             <div class="contact-info-item">
               <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
               <div>
-                <h4>Branch 2 — Nethaji Veedhi</h4>
-                <p>Nethaji Veedhi Street, Narasannapeta,<br>Srikakulam, Andhra Pradesh</p>
+                <h4>Branch 2 — Netaji Street</h4>
+                <p>Vignan Vidyaniketan, Netaji St,<br>Narasannapeta, Andhra Pradesh 532421</p>
               </div>
             </div>
             <div class="contact-info-item">
@@ -955,6 +1047,22 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== GOOGLE MAP ===== -->
+  <section class="section" style="padding-top:0;padding-bottom:0;">
+    <div style="width:100%;height:380px;">
+      <iframe
+        title="Sindhu's Vignan Vidyanikethan Location"
+        width="100%"
+        height="100%"
+        style="border:0;display:block;"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=18.417231348460138,84.04380083105052&z=17&output=embed">
+      </iframe>
     </div>
   </section>
 
@@ -1011,6 +1119,9 @@
   <button class="scroll-top" id="scrollTop" title="Scroll to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
+
+  <!-- Glide.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js"></script>
 
   <!-- JavaScript -->
   <script src="script.js"></script>
