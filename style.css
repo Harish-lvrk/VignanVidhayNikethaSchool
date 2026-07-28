@@ -1569,9 +1569,9 @@ ul { list-style: none; }
 }
 
 .hero-container {
-  align-items: flex-end;     /* push content to bottom half */
+  align-items: center;     /* push content to center */
   justify-content: center;
-  padding: 70px 0 80px;      /* top: clear header; bottom: clear dots + safety */
+  padding: 80px 0 60px;      /* top: clear header; bottom: clear dots + safety */
 }
 
 .hero-content-box {
@@ -2092,3 +2092,26 @@ ul { list-style: none; }
     font-size: 0.75rem;
   }
 }
+
+/* ===== TEMPORARY PLACEHOLDER IMAGES ===== */
+
+.about-photo-placeholder {
+  background: url('images/placeholder_campus.png') center/cover !important;
+}
+.about-photo-placeholder svg { display: none; }
+
+.academic-card-image {
+  background: url('images/placeholder_classroom.png') center/cover !important;
+}
+.academic-card-image svg, .academic-card-image span { display: none; }
+
+.gallery-item {
+  background: url('images/placeholder_events.png') center/cover !important;
+  border: none !important;
+}
+.gallery-item svg, .gallery-item span { display: none; }
+
+.event-image {
+  background: url('images/placeholder_sports.png') center/cover !important;
+}
+.event-image svg { display: none; }
