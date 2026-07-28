@@ -1569,9 +1569,9 @@ ul { list-style: none; }
 }
 
 .hero-container {
-  align-items: center;       /* center vertically so nothing is cut off */
+  align-items: flex-end;     /* push content to bottom half */
   justify-content: center;
-  padding: 70px 0 60px;      /* top: clear the header; bottom: clear the dots */
+  padding: 70px 0 80px;      /* top: clear header; bottom: clear dots + safety */
 }
 
 .hero-content-box {
